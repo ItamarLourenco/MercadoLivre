@@ -10,19 +10,30 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var customImageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-
+    static var reusableIdentifier = String(describing: ProductTableViewCell.self)
     
-    static func register(in tableView: UITableView) {
-        let reusableIdentifier = String(describing: self)
+    @IBOutlet weak var uiImageView:UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    
+    public static func register(in tableView: UITableView) {
         tableView.register(UINib.init(nibName: reusableIdentifier,
-                                      bundle: Bundle.init(for: ProductTableViewCell.self)),
-                           forCellReuseIdentifier: reusableIdentifier)
+                   bundle: Bundle.init(for: ProductTableViewCell.self)),
+        forCellReuseIdentifier: reusableIdentifier)
     }
     
-    static func build(tableView: UITableView, indexPath: IndexPath) -> ProductTableViewCell{
-        return tableView.dequeueReusableCell(withIdentifier: String(describing: ProductTableViewCell.self), for: indexPath) as! ProductTableViewCell
+    public static func build(tableView: UITableView, indexPath: IndexPath) -> ProductTableViewCell{
+        return tableView.dequeueReusableCell(withIdentifier: reusableIdentifier,
+                                      for: indexPath) as! ProductTableViewCell
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        uiImageView.layer.masksToBounds = true
+        uiImageView.layer.cornerRadius = 5
+    }
+
+    
+    
 }

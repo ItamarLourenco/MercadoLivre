@@ -11,6 +11,7 @@ import UIKit
 protocol MainViewControllerProtocol{
     func displayHomeData(response: SearchModel)
     func displayErrorAlert()
+    func displayEmptyState()
     func showProgress()
     func hideProgress()
 }
@@ -42,11 +43,11 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchMainData(search: "")
+        interactor?.fetchMainData(search: "fone")
      
-        self.tableView.separatorStyle = .none
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 200
+        self.tableView.estimatedRowHeight = 110
+        self.tableView.keyboardDismissMode = .onDrag
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
@@ -54,7 +55,13 @@ class MainViewController: BaseViewController {
     }
     
     override func performSearchRequest(text: String){
+        originalView()
         interactor?.fetchMainData(search: text)
+    }
+    
+    override func tryAgain(_ sender: UIButton?) {
+        super.tryAgain(sender)
+        interactor?.fetchMainData(search: "carro")
     }
 }
 
@@ -66,20 +73,24 @@ extension MainViewController: MainViewControllerProtocol{
         }
     }
     
+    func displayEmptyState() {
+        showEmptyState()
+    }
+    
     func displayErrorAlert() {
-        
+        showScreenError()
     }
     
     func showProgress() {
         DispatchQueue.main.async {
-            self.indicatorView.isHidden = false
+            self.indicatorView.startAnimating()
             self.tableView.isHidden = true
         }
     }
     
     func hideProgress() {
         DispatchQueue.main.async {
-            self.indicatorView.isHidden = true
+            self.indicatorView.stopAnimating()
             self.tableView.isHidden = false
         }
     }
@@ -94,13 +105,21 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
         guard let result:Results = self.searchModel?.results![indexPath.row] else {return UITableViewCell()}
         
         let cell = ProductTableViewCell.build(tableView: tableView, indexPath: indexPath)
-        cell.label.text = result.title
-        cell.customImageView.load(url: URL(string: result.thumbnail!.replacingOccurrences(of: "http", with: "https", options: .literal, range: nil))!)
+        cell.title.text = result.title
+        cell.price.text = result.price!.toPrice
+        
+        
+        cell.uiImageView.load(from: result.thumbnail!.replacingOccurrences(of: "http", with: "https"))
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let result:Results = self.searchModel?.results![indexPath.row] else {return}
+        Router.showDetailsViewController(id: result.id ?? "")
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 56.0
+        return 110
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

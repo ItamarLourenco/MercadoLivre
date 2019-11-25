@@ -11,6 +11,7 @@ import UIKit
 protocol MainPresenterPrococol {
     func prensetMainData(response: SearchModel)
     func presentErrorAlert()
+    func presentEmptyState()
     func showProgress()
     func hideProgress()
 }
@@ -19,11 +20,11 @@ class MainPresenter: MainPresenterPrococol {
     var mainViewController: MainViewControllerProtocol?
 
     func prensetMainData(response: SearchModel) {
-        self.mainViewController?.displayHomeData(response: response)
+        mainViewController?.displayHomeData(response: response)
     }
     
     func presentErrorAlert() {
-        
+        mainViewController?.displayErrorAlert()
     }
     
     func showProgress(){
@@ -32,6 +33,10 @@ class MainPresenter: MainPresenterPrococol {
     
     func hideProgress(){
         mainViewController?.hideProgress()
+    }
+    
+    func presentEmptyState(){
+        mainViewController?.displayEmptyState()
     }
     
 
