@@ -16,6 +16,7 @@ class DetailInteractor: DetailInteractorProtocol {
     
     var presenter: DetailPresenterProtocol? = nil
 
+
     func fetchDetailData(id: String) {
         self.presenter?.showProgress()
         Api.shared.requestObject(endpoint: .item, params: id) { (response: Result<ItemModel, Error>) in

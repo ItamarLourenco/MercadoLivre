@@ -29,7 +29,7 @@ class Api: NSObject {
     
         let handleParams = params.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let handleUrl = String(format: (Api.endpoint + endpoint.rawValue), handleParams)
-        
+    
         
         guard let connectionURL = URLComponents(string: handleUrl)?.url else {
             return
@@ -56,7 +56,12 @@ class Api: NSObject {
             }
         }.resume()
         
-        
+        print("""
+            
+            Request: \(handleUrl)
+            Params: \(params)
+            
+        """)
     }
 }
 

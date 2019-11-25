@@ -15,12 +15,13 @@ protocol MainInteractorProtocol {
 class MainInteractor: MainInteractorProtocol {
     
     var presenter: MainPresenterPrococol? = nil
+    var repository: MainRepositoryProtocol = MainRepository()
 
-    
     func fetchMainData(search: String) {
-        self.presenter?.showProgress()
-        Api.shared.requestObject(endpoint: .search, params: search) { (response: Result<SearchModel, Error>) in
-            self.presenter?.hideProgress()
+        self.presenter?.presentShowProgress()
+        
+        repository.fetchMainData(search: search) { (response: Result<SearchModel, Error>) in
+            self.presenter?.presentHideProgress()
             do {
                 let results = try response.get()
                 
@@ -34,6 +35,7 @@ class MainInteractor: MainInteractorProtocol {
                 self.presenter?.presentErrorAlert()
             }
         }
+        
         
     }
     

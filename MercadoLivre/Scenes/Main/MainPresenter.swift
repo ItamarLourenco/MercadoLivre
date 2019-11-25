@@ -12,8 +12,8 @@ protocol MainPresenterPrococol {
     func prensetMainData(response: SearchModel)
     func presentErrorAlert()
     func presentEmptyState()
-    func showProgress()
-    func hideProgress()
+    func presentShowProgress()
+    func presentHideProgress()
 }
 
 class MainPresenter: MainPresenterPrococol {
@@ -27,11 +27,11 @@ class MainPresenter: MainPresenterPrococol {
         mainViewController?.displayErrorAlert()
     }
     
-    func showProgress(){
+    func presentShowProgress(){
         mainViewController?.showProgress()
     }
     
-    func hideProgress(){
+    func presentHideProgress(){
         mainViewController?.hideProgress()
     }
     
