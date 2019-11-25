@@ -34,7 +34,7 @@ class DetailsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         handleViewButtons()
-        
+
         interactor?.fetchDetailData(id: self.id)
     }
 
