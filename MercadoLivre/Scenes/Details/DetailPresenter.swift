@@ -14,6 +14,10 @@ protocol DetailPresenterProtocol {
     func presentEmptyState()
     func showProgress()
     func hideProgress()
+    func setImageView(from: String)
+    func setProductTitle(title: String)
+    func setDesc(desc: String)
+    func setPrice(price: String)
 }
 
 class DetailPresenter: DetailPresenterProtocol {
@@ -40,4 +44,19 @@ class DetailPresenter: DetailPresenterProtocol {
         detailViewController?.displayEmptyState()
     }
     
+    func setImageView(from: String) {
+        detailViewController?.setImageView(from: from)
+    }
+    
+    func setProductTitle(title: String) {
+        detailViewController?.setProductTitle(title: title)
+    }
+    
+    func setDesc(desc: String) {
+        detailViewController?.setDesc(desc: desc)
+    }
+    
+    func setPrice(price: String) {
+        detailViewController?.setPrice(price: price)
+    }
 }

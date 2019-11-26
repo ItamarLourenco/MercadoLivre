@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsMock: NSObject {
 
-    static var mock = Results(id: "ID",
+    static var mock = ResultsModel(id: "ID",
                         site_id: "Site ID",
                         title: "Title",
                         price: 0.0,

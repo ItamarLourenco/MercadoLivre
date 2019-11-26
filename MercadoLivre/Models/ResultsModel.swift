@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Results : Codable {
+struct ResultsModel : Codable {
 	let id : String?
 	let site_id : String?
 	let title : String?
@@ -72,31 +72,3 @@ struct Results : Codable {
         
     }
 }
-
-extension Results: Equatable {
-    
-    static func == (lhs: SearchModel, rhs: SearchModel) -> Bool {
-        return lhs.id == rhs.id
-            && lhs.site_id == rhs.site_id
-            && lhs.title == rhs.title
-            && lhs.price == rhs.price
-            && lhs.currency_id == rhs.currency_id
-            && lhs.available_quantity == rhs.available_quantity
-            && lhs.sold_quantity == rhs.sold_quantity
-            && lhs.buying_mode == rhs.buying_mode
-            && lhs.listing_type_id == rhs.listing_type_id
-            && lhs.stop_time == rhs.stop_time
-            && lhs.condition == rhs.condition
-            && lhs.permalink == rhs.permalink
-            && lhs.thumbnail == rhs.thumbnail
-            && lhs.accepts_mercadopago == rhs.accepts_mercadopago
-            && lhs.category_id == rhs.category_id
-            && lhs.official_store_id == rhs.official_store_id
-            && lhs.catalog_product_id == rhs.catalog_product_id
-            && lhs.tags == rhs.tags
-            && lhs.catalog_listing == rhs.catalog_listing
-    }
-    
-}
-
-

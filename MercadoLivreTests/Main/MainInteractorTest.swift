@@ -33,8 +33,15 @@ class MainInteractorTest: XCTestCase {
     func testFetchMainDataSuccess() {
         mainInteractor.fetchMainData(search: "teste")
         
-        //XCTAssertEqual(presenter.presentMainCataSearchModel, SearchModelMock.mock)
+        XCTAssertEqual(presenter.presentMainCataSearchModel, SearchModelMock.mock)
         XCTAssertTrue(presenter.presentMainDataCalled)
     }
 
+    func testFetchMainDataError() {
+        repository.shouldFailRequest = true
+        mainInteractor.fetchMainData(search: "teste")
+        
+        XCTAssertTrue(presenter.presentErrorAlertCalled)
+    }
 }
+

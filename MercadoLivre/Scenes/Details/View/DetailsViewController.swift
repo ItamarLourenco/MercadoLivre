@@ -14,6 +14,10 @@ protocol DetailViewControllerProtocol {
     func displayEmptyState()
     func showProgress()
     func hideProgress()
+    func setImageView(from: String)
+    func setProductTitle(title: String)
+    func setDesc(desc: String)
+    func setPrice(price: String)
 }
 
 class DetailsViewController: BaseViewController {
@@ -56,16 +60,26 @@ class DetailsViewController: BaseViewController {
 
 
 extension DetailsViewController: DetailViewControllerProtocol{
+    
     func displayDetailData(response: ItemModel) {
         self.itemModel = response
-        DispatchQueue.main.async {
-            self.imageView.load(from: response.pictures?.first?.secure_url ?? "")
-            self.productTitle.text = response.title
-            self.desc.text = response.title
-            self.price.text = response.price?.toPrice
-        }
     }
     
+    func setImageView(from: String) {
+        self.imageView.load(from: from)
+    }
+    
+    func setProductTitle(title: String) {
+        self.productTitle.text = title
+    }
+    
+    func setDesc(desc: String) {
+        self.desc.text = desc
+    }
+    
+    func setPrice(price: String) {
+        self.price.text = price
+    }
     
     func displayErrorAlert() {
         showScreenError()

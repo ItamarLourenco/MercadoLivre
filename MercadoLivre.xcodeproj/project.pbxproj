@@ -21,7 +21,7 @@
 		4E44159D238C6A620011AE9C /* MainViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E44159C238C6A620011AE9C /* MainViewControllerMock.swift */; };
 		4E44159E238C6A770011AE9C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928F02389BD4300E76F5A /* MainViewController.swift */; };
 		4E69EF5C238C6D3A00929F36 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928F52389BDA300E76F5A /* BaseViewController.swift */; };
-		4E69EF5D238C6D4400929F36 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9295A238A153500E76F5A /* Results.swift */; };
+		4E69EF5D238C6D4400929F36 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9295A238A153500E76F5A /* ResultsModel.swift */; };
 		4E69EF5E238C6D6600929F36 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928FA2389C25700E76F5A /* Api.swift */; };
 		4E69EF5F238C6D6C00929F36 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928F72389BFBA00E76F5A /* Colors.swift */; };
 		4E69EF60238C6D7400929F36 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA92989238ACA0800E76F5A /* ProductTableViewCell.swift */; };
@@ -36,6 +36,14 @@
 		4E69EF6D238C790C00929F36 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E69EF6C238C790C00929F36 /* MainRepository.swift */; };
 		4E69EF6F238C7B2800929F36 /* MainRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E69EF6E238C7B2800929F36 /* MainRepositoryMock.swift */; };
 		4E69EF70238C7B3900929F36 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E69EF6C238C790C00929F36 /* MainRepository.swift */; };
+		4E720E25238CA7960049DC15 /* DetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E24238CA7960049DC15 /* DetailInteractorMock.swift */; };
+		4E720E27238CA7A60049DC15 /* DetailPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E26238CA7A60049DC15 /* DetailPresenterMock.swift */; };
+		4E720E29238CA7C40049DC15 /* DetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E28238CA7C40049DC15 /* DetailViewControllerMock.swift */; };
+		4E720E2B238CA7D80049DC15 /* ItemModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E2A238CA7D80049DC15 /* ItemModelMock.swift */; };
+		4E720E2D238CA7F60049DC15 /* DetailRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E2C238CA7F60049DC15 /* DetailRepositoryMock.swift */; };
+		4E720E2F238CA8D40049DC15 /* DetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E2E238CA8D40049DC15 /* DetailRepository.swift */; };
+		4E720E31238CACE40049DC15 /* PicturesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E30238CACE40049DC15 /* PicturesMock.swift */; };
+		4E720E32238CAF830049DC15 /* DetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E720E2E238CA8D40049DC15 /* DetailRepository.swift */; };
 		4E9AA079238B1BD5008079F7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9AA077238B1BD5008079F7 /* DetailsViewController.swift */; };
 		4E9AA07A238B1BD5008079F7 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9AA078238B1BD5008079F7 /* DetailsViewController.xib */; };
 		4EA91A45238B3E6400409913 /* ScreenError.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA91A44238B3E6400409913 /* ScreenError.xib */; };
@@ -56,7 +64,7 @@
 		4EA928FB2389C25700E76F5A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928FA2389C25700E76F5A /* Api.swift */; };
 		4EA928FD2389CAE800E76F5A /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928FC2389CAE800E76F5A /* MainInteractor.swift */; };
 		4EA929002389CB6C00E76F5A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA928FF2389CB6C00E76F5A /* MainPresenter.swift */; };
-		4EA9296D238A153700E76F5A /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9295A238A153500E76F5A /* Results.swift */; };
+		4EA9296D238A153700E76F5A /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9295A238A153500E76F5A /* ResultsModel.swift */; };
 		4EA9297B238A153700E76F5A /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA92968238A153700E76F5A /* SearchModel.swift */; };
 		4EA9298B238ACA0800E76F5A /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA92989238ACA0800E76F5A /* ProductTableViewCell.swift */; };
 		4EA9298C238ACA0800E76F5A /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA9298A238ACA0800E76F5A /* ProductTableViewCell.xib */; };
@@ -100,6 +108,13 @@
 		4E69EF69238C738700929F36 /* SearchModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelMock.swift; sourceTree = "<group>"; };
 		4E69EF6C238C790C00929F36 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
 		4E69EF6E238C7B2800929F36 /* MainRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepositoryMock.swift; sourceTree = "<group>"; };
+		4E720E24238CA7960049DC15 /* DetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorMock.swift; sourceTree = "<group>"; };
+		4E720E26238CA7A60049DC15 /* DetailPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterMock.swift; sourceTree = "<group>"; };
+		4E720E28238CA7C40049DC15 /* DetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerMock.swift; sourceTree = "<group>"; };
+		4E720E2A238CA7D80049DC15 /* ItemModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModelMock.swift; sourceTree = "<group>"; };
+		4E720E2C238CA7F60049DC15 /* DetailRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryMock.swift; sourceTree = "<group>"; };
+		4E720E2E238CA8D40049DC15 /* DetailRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepository.swift; sourceTree = "<group>"; };
+		4E720E30238CACE40049DC15 /* PicturesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesMock.swift; sourceTree = "<group>"; };
 		4E9AA077238B1BD5008079F7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4E9AA078238B1BD5008079F7 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		4EA91A44238B3E6400409913 /* ScreenError.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenError.xib; sourceTree = "<group>"; };
@@ -126,7 +141,7 @@
 		4EA928FA2389C25700E76F5A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4EA928FC2389CAE800E76F5A /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		4EA928FF2389CB6C00E76F5A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		4EA9295A238A153500E76F5A /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		4EA9295A238A153500E76F5A /* ResultsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		4EA92968238A153700E76F5A /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		4EA92989238ACA0800E76F5A /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		4EA9298A238ACA0800E76F5A /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -187,6 +202,7 @@
 		4E441586238C568A0011AE9C /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				4E720E23238CA76D0049DC15 /* Mock */,
 				4E44158D238C579F0011AE9C /* DetailInteractorTest.swift */,
 				4E44158F238C57AD0011AE9C /* DetailPresenterTest.swift */,
 				4E441591238C57BE0011AE9C /* DetailsViewControllerTest.swift */,
@@ -211,8 +227,22 @@
 			isa = PBXGroup;
 			children = (
 				4E69EF6C238C790C00929F36 /* MainRepository.swift */,
+				4E720E2E238CA8D40049DC15 /* DetailRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		4E720E23238CA76D0049DC15 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				4E720E24238CA7960049DC15 /* DetailInteractorMock.swift */,
+				4E720E26238CA7A60049DC15 /* DetailPresenterMock.swift */,
+				4E720E28238CA7C40049DC15 /* DetailViewControllerMock.swift */,
+				4E720E2A238CA7D80049DC15 /* ItemModelMock.swift */,
+				4E720E2C238CA7F60049DC15 /* DetailRepositoryMock.swift */,
+				4E720E30238CACE40049DC15 /* PicturesMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		4E9AA075238B1BA5008079F7 /* Details */ = {
@@ -380,7 +410,7 @@
 			children = (
 				4EA92968238A153700E76F5A /* SearchModel.swift */,
 				4EA91A50238B7F7600409913 /* ItemModel.swift */,
-				4EA9295A238A153500E76F5A /* Results.swift */,
+				4EA9295A238A153500E76F5A /* ResultsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -624,6 +654,7 @@
 				4EA928FB2389C25700E76F5A /* Api.swift in Sources */,
 				4EA928F62389BDA300E76F5A /* BaseViewController.swift in Sources */,
 				4EA9297B238A153700E76F5A /* SearchModel.swift in Sources */,
+				4E720E2F238CA8D40049DC15 /* DetailRepository.swift in Sources */,
 				4EA928F82389BFBA00E76F5A /* Colors.swift in Sources */,
 				4EA929002389CB6C00E76F5A /* MainPresenter.swift in Sources */,
 				4E69EF6D238C790C00929F36 /* MainRepository.swift in Sources */,
@@ -631,7 +662,7 @@
 				4EA928BD2389A23400E76F5A /* SceneDelegate.swift in Sources */,
 				4EA9298E238AE9A900E76F5A /* Double+Extension.swift in Sources */,
 				4EA9298B238ACA0800E76F5A /* ProductTableViewCell.swift in Sources */,
-				4EA9296D238A153700E76F5A /* Results.swift in Sources */,
+				4EA9296D238A153700E76F5A /* ResultsModel.swift in Sources */,
 				4EA91A4D238B766E00409913 /* DetailInteractor.swift in Sources */,
 				4EA91A4F238B76E200409913 /* DetailPresenter.swift in Sources */,
 				4EA92990238B19D000E76F5A /* Router.swift in Sources */,
@@ -651,6 +682,7 @@
 				4E69EF63238C6DB400929F36 /* DetailsViewController.swift in Sources */,
 				4E69EF68238C734600929F36 /* ResultsMock.swift in Sources */,
 				4E441592238C57BE0011AE9C /* DetailsViewControllerTest.swift in Sources */,
+				4E720E31238CACE40049DC15 /* PicturesMock.swift in Sources */,
 				4E69EF60238C6D7400929F36 /* ProductTableViewCell.swift in Sources */,
 				4EA928D22389A23800E76F5A /* MercadoLivreTests.swift in Sources */,
 				4E44159B238C69560011AE9C /* SearchModel.swift in Sources */,
@@ -664,8 +696,14 @@
 				4E69EF61238C6D8D00929F36 /* Router.swift in Sources */,
 				4E69EF65238C6DD300929F36 /* DetailInteractor.swift in Sources */,
 				4E44158C238C57160011AE9C /* MainViewControllerTest.swift in Sources */,
+				4E720E27238CA7A60049DC15 /* DetailPresenterMock.swift in Sources */,
+				4E720E25238CA7960049DC15 /* DetailInteractorMock.swift in Sources */,
 				4E69EF6A238C738700929F36 /* SearchModelMock.swift in Sources */,
-				4E69EF5D238C6D4400929F36 /* Results.swift in Sources */,
+				4E720E2B238CA7D80049DC15 /* ItemModelMock.swift in Sources */,
+				4E720E32238CAF830049DC15 /* DetailRepository.swift in Sources */,
+				4E720E29238CA7C40049DC15 /* DetailViewControllerMock.swift in Sources */,
+				4E720E2D238CA7F60049DC15 /* DetailRepositoryMock.swift in Sources */,
+				4E69EF5D238C6D4400929F36 /* ResultsModel.swift in Sources */,
 				4E44159D238C6A620011AE9C /* MainViewControllerMock.swift in Sources */,
 				4E441590238C57AD0011AE9C /* DetailPresenterTest.swift in Sources */,
 				4E69EF70238C7B3900929F36 /* MainRepository.swift in Sources */,

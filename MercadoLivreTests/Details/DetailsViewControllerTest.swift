@@ -10,16 +10,36 @@ import XCTest
 
 class DetailsViewControllerTest: XCTestCase {
 
+    var view: DetailsViewController = DetailsViewController()
+    var interactor: DetailInteractorMock = DetailInteractorMock()
+    var window: UIWindow!
+    
     override func setUp() {
-
+        view.interactor = interactor
+        window = UIWindow(frame: CGRect(x: 0, y: 0, width: 375, height: 667))
+        loadView()
+    }
+    
+    func loadView() {
+        window.addSubview(view.view)
+        RunLoop.current.run(until: Date())
     }
 
-    override func tearDown() {
+    func testSetProductTitle(){
+        view.setProductTitle(title: "Produto")
         
+        XCTAssertEqual(view.productTitle.text, "Produto")
     }
-
-    func testExample() {
+    
+    func testSetDesc(){
+        view.setDesc(desc: "Desc")
         
+        XCTAssertEqual(view.desc.text, "Desc")
     }
-
+    
+    func testSetPrice() {
+        view.setPrice(price: "Price")
+        
+        XCTAssertEqual(view.price.text, "Price")
+    }
 }

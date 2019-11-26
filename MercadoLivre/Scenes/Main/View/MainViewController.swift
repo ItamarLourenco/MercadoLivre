@@ -33,7 +33,7 @@ class MainViewController: BaseViewController {
         setup()
     }
     
-    private func setup() {
+    public func setup() {
         let interactor = MainInteractor()
         let presenter = MainPresenter()
         self.interactor = interactor
@@ -43,7 +43,7 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchMainData(search: "fone")
+        interactor?.fetchMainData(search: "Motorola")
      
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 110
@@ -102,7 +102,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let result:Results = self.searchModel?.results![indexPath.row] else {return UITableViewCell()}
+        guard let result:ResultsModel = self.searchModel?.results![indexPath.row] else {return UITableViewCell()}
         
         let cell = ProductTableViewCell.build(tableView: tableView, indexPath: indexPath)
         cell.title.text = result.title
@@ -114,7 +114,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let result:Results = self.searchModel?.results![indexPath.row] else {return}
+        guard let result:ResultsModel = self.searchModel?.results![indexPath.row] else {return}
         Router.showDetailsViewController(id: result.id ?? "")
     }
     

@@ -15,18 +15,30 @@ protocol DetailInteractorProtocol {
 class DetailInteractor: DetailInteractorProtocol {
     
     var presenter: DetailPresenterProtocol? = nil
+    var repository:DetailRepositoryProtocol = DetailRepository()
 
 
     func fetchDetailData(id: String) {
         self.presenter?.showProgress()
-        Api.shared.requestObject(endpoint: .item, params: id) { (response: Result<ItemModel, Error>) in
+        repository.fetchDetailData(id: id) { (response: Result<ItemModel, Error>) in
             self.presenter?.hideProgress()
             do {
                 let results = try response.get()
-                self.presenter?.prensetDetailData(response: results)
+                self.handleResult(itemModel: results)
             } catch {
                 self.presenter?.presentErrorAlert()
             }
+        }
+    }
+    
+    func handleResult(itemModel: ItemModel) {
+        self.presenter?.prensetDetailData(response: itemModel)
+        
+        DispatchQueue.main.async {
+            self.presenter?.setImageView(from: itemModel.pictures?.first?.secure_url ?? "")
+            self.presenter?.setPrice(price: itemModel.price?.toPrice ?? "")
+            self.presenter?.setProductTitle(title: itemModel.title ?? "")
+            self.presenter?.setDesc(desc: itemModel.title ?? "")
         }
     }
 }
