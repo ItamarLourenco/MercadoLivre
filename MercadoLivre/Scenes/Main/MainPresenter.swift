@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MainPresenterPrococol {
+protocol MainPresenterPrococol: class {
     func prensetMainData(response: SearchModel)
     func presentErrorAlert()
     func presentEmptyState()
@@ -17,7 +17,7 @@ protocol MainPresenterPrococol {
 }
 
 class MainPresenter: MainPresenterPrococol {
-    var mainViewController: MainViewControllerProtocol?
+    weak var mainViewController: MainViewControllerProtocol?
 
     func prensetMainData(response: SearchModel) {
         mainViewController?.displayHomeData(response: response)

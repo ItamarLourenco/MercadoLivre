@@ -13,7 +13,7 @@ protocol DetailRepositoryProtocol {
     func fetchDetailData(id: String, completion: @escaping (Result<ItemModel, Error>) -> ())
 }
 
-class DetailRepository: DetailRepositoryProtocol {
+struct DetailRepository: DetailRepositoryProtocol {
     func fetchDetailData(id: String, completion: @escaping (Result<ItemModel, Error>) -> ()) {
         Api.shared.requestObject(endpoint: .item, params: id, completion: completion)
     }

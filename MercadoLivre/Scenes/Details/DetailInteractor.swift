@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DetailInteractorProtocol {
+protocol DetailInteractorProtocol : class{
     func fetchDetailData(id: String)
 }
 
@@ -20,13 +20,13 @@ class DetailInteractor: DetailInteractorProtocol {
 
     func fetchDetailData(id: String) {
         self.presenter?.showProgress()
-        repository.fetchDetailData(id: id) { (response: Result<ItemModel, Error>) in
-            self.presenter?.hideProgress()
+        repository.fetchDetailData(id: id) { [weak self] (response: Result<ItemModel, Error>) in
+            self?.presenter?.hideProgress()
             do {
                 let results = try response.get()
-                self.handleResult(itemModel: results)
+                self?.handleResult(itemModel: results)
             } catch {
-                self.presenter?.presentErrorAlert()
+                self?.presenter?.presentErrorAlert()
             }
         }
     }

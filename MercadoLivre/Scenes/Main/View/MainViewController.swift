@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MainViewControllerProtocol{
+protocol MainViewControllerProtocol: class{
     func displayHomeData(response: SearchModel)
     func displayErrorAlert()
     func displayEmptyState()

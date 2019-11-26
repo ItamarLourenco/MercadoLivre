@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DetailPresenterProtocol {
+protocol DetailPresenterProtocol: class {
     func prensetDetailData(response: ItemModel)
     func presentErrorAlert()
     func presentEmptyState()
@@ -22,7 +22,7 @@ protocol DetailPresenterProtocol {
 
 class DetailPresenter: DetailPresenterProtocol {
     
-    var detailViewController: DetailViewControllerProtocol?
+    weak var detailViewController: DetailViewControllerProtocol?
     
     func prensetDetailData(response: ItemModel) {
         detailViewController?.displayDetailData(response: response)

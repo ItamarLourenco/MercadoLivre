@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MainInteractorProtocol {
+protocol MainInteractorProtocol: class {
     func fetchMainData(search: String)
 }
 
@@ -20,19 +20,20 @@ class MainInteractor: MainInteractorProtocol {
     func fetchMainData(search: String) {
         self.presenter?.presentShowProgress()
         
-        repository.fetchMainData(search: search) { (response: Result<SearchModel, Error>) in
-            self.presenter?.presentHideProgress()
+        
+        repository.fetchMainData(search: search) { [weak self] (response: Result<SearchModel, Error>) in
+            self?.presenter?.presentHideProgress()
             do {
                 let results = try response.get()
                 
                 if results.results!.count > 0 {
-                    self.presenter?.prensetMainData(response: results)
+                    self?.presenter?.prensetMainData(response: results)
                 } else {
-                    self.presenter?.presentEmptyState()
+                    self?.presenter?.presentEmptyState()
                 }
                 
             } catch {
-                self.presenter?.presentErrorAlert()
+                self?.presenter?.presentErrorAlert()
             }
         }
         

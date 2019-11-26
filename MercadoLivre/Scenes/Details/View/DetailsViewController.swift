@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DetailViewControllerProtocol {
+protocol DetailViewControllerProtocol: class {
     func displayDetailData(response: ItemModel)
     func displayErrorAlert()
     func displayEmptyState()

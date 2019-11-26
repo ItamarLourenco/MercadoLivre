@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol MainRepositoryProtocol {
+protocol MainRepositoryProtocol: class {
     func fetchMainData(search: String, completion: @escaping (Result<SearchModel, Error>) -> ())
 }
 
