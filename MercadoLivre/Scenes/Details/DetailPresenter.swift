@@ -17,7 +17,7 @@ protocol DetailPresenterProtocol: class {
     func setImageView(from: String)
     func setProductTitle(title: String)
     func setDesc(desc: String)
-    func setPrice(price: String)
+    func setPrice(price: Double)
 }
 
 class DetailPresenter: DetailPresenterProtocol {
@@ -56,7 +56,7 @@ class DetailPresenter: DetailPresenterProtocol {
         detailViewController?.setDesc(desc: desc)
     }
     
-    func setPrice(price: String) {
-        detailViewController?.setPrice(price: price)
+    func setPrice(price: Double) {
+        detailViewController?.setPrice(price: price.toPrice)
     }
 }

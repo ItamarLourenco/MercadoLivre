@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailPresenterMock: DetailPresenterProtocol {
+
     
     var presentDetailDataCalled = false
     var presentDetailDataResponse:ItemModel?
@@ -56,7 +57,7 @@ class DetailPresenterMock: DetailPresenterProtocol {
         setDescCalled = true
     }
     
-    func setPrice(price: String) {
+    func setPrice(price: Double) {
         setPriceCalled = true
     }
 }

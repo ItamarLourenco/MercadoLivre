@@ -36,7 +36,7 @@ class DetailInteractor: DetailInteractorProtocol {
         
         DispatchQueue.main.async {
             self.presenter?.setImageView(from: itemModel.pictures?.first?.secure_url ?? "")
-            self.presenter?.setPrice(price: itemModel.price?.toPrice ?? "")
+            self.presenter?.setPrice(price: itemModel.price ?? 0.0)
             self.presenter?.setProductTitle(title: itemModel.title ?? "")
             self.presenter?.setDesc(desc: itemModel.title ?? "")
         }
