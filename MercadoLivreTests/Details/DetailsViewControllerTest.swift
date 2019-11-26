@@ -28,7 +28,7 @@ class DetailsViewControllerTest: XCTestCase {
     func testSetProductTitle(){
         view.setProductTitle(title: "Produto")
         
-        XCTAssertEqual(view.productTitle.text, "Produto")
+        XCTAssertEqual(view.productTitle.text, "Produto") 
     }
     
     func testSetDesc(){
